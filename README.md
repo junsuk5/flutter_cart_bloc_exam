@@ -1,16 +1,8 @@
-# flutter_cart_bloc_exam
+# Flutter Bloc Pattern Sample
 
-A new Flutter application.
+장바구니 예제
 
-## Getting Started
+## 참고 자료
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- [State management](https://flutter.dev/docs/development/data-and-backend/state-mgmt/intro)
+- [Bloc](https://pub.dartlang.org/packages/flutter_bloc)
