@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cart_bloc_exam/bloc/cart_bloc.dart';
-import 'package:flutter_cart_bloc_exam/main.dart';
+import 'package:flutter_cart_bloc_exam/bloc/cart_provider.dart';
 import 'package:flutter_cart_bloc_exam/src/item.dart';
 import 'package:flutter_cart_bloc_exam/src/my_cart.dart';
 
@@ -10,8 +10,10 @@ class MyCatalog extends StatefulWidget {
 }
 
 class _MyCatalogState extends State<MyCatalog> {
+  CartBloc cartBloc;
   @override
   Widget build(BuildContext context) {
+    cartBloc = CartProvider.of(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('Catalog'),

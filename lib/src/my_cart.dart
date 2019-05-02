@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cart_bloc_exam/main.dart';
+import 'package:flutter_cart_bloc_exam/bloc/cart_bloc.dart';
+import 'package:flutter_cart_bloc_exam/bloc/cart_provider.dart';
 import 'package:flutter_cart_bloc_exam/src/item.dart';
 
 class MyCart extends StatefulWidget {
@@ -10,6 +11,7 @@ class MyCart extends StatefulWidget {
 class _MyCartState extends State<MyCart> {
   @override
   Widget build(BuildContext context) {
+    CartBloc cartBloc = CartProvider.of(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('MyCart'),
@@ -18,7 +20,7 @@ class _MyCartState extends State<MyCart> {
             stream: cartBloc.cartList,
             builder: (context, snapshot) {
               var sum = 0;
-              if (snapshot.data.length > 0) {
+              if (snapshot.hasData) {
                 sum = snapshot.data
                     .map((item) => item.price)
                     .reduce((x, y) => x + y);
