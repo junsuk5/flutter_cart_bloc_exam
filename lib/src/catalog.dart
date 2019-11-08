@@ -29,9 +29,7 @@ class _MyCatalogState extends State<MyCatalog> {
             )
           ],
         ),
-        body: BlocProvider(
-          bloc: _cartBloc,
-          child: BlocBuilder<CartEvent, List<Item>>(
+        body: BlocBuilder<CartBloc, List<Item>>(
             bloc: _cartBloc,
             builder: (BuildContext context, List state) {
               return Center(
@@ -43,7 +41,7 @@ class _MyCatalogState extends State<MyCatalog> {
               );
             },
           ),
-        ));
+        );
   }
 
   Widget _buildItem(Item todo, List state, CartBloc bloc) {
@@ -62,9 +60,9 @@ class _MyCatalogState extends State<MyCatalog> {
             onPressed: () {
               setState(() {
                 if (isChecked) {
-                  bloc.dispatch(CartEvent(CartEventType.remove, todo));
+                  bloc.add(CartEvent(CartEventType.remove, todo));
                 } else {
-                  bloc.dispatch(CartEvent(CartEventType.add, todo));
+                  bloc.add(CartEvent(CartEventType.add, todo));
                 }
               });
             }),

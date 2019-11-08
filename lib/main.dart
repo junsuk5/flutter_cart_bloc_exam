@@ -14,23 +14,17 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  final _cartBloc = new CartBloc();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      bloc: _cartBloc,
-      child: BlocBuilder(
-        bloc: _cartBloc,
-        builder: (BuildContext context, List state) {
-          return MaterialApp(
-            title: 'Flutter Code Sample for material.Scaffold',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
-            home: MyLoginScreen(),
-          );
-        },
+      builder: (context) => CartBloc(),
+      child: MaterialApp(
+        title: 'Flutter Code Sample for material.Scaffold',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyLoginScreen(),
       ),
     );
   }
