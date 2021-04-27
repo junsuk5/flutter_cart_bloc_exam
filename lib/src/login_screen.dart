@@ -22,7 +22,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
           TextField(controller: _loginController,),
           Text('Password'),
           TextField(controller: _passwordController,),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyCatalog()));
             },

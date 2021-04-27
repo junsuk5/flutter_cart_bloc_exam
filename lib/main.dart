@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      builder: (context) => CartBloc(),
+      create: (BuildContext context) => CartBloc(),
       child: MaterialApp(
         title: 'Flutter Code Sample for material.Scaffold',
         theme: ThemeData(

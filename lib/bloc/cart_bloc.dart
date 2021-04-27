@@ -11,21 +11,18 @@ class CartEvent {
 }
 
 class CartBloc extends Bloc<CartEvent, List<Item>> {
-  List<Item> items = [];
-
-  @override
-  List<Item> get initialState => [];
+  CartBloc() : super([]);
 
   @override
   Stream<List<Item>> mapEventToState(CartEvent event) async* {
-    switch(event.type) {
+    switch (event.type) {
       case CartEventType.add:
-        items.add(event.item);
+        state.add(event.item);
         break;
       case CartEventType.remove:
-        items.remove(event.item);
+        state.remove(event.item);
         break;
     }
-    yield items;
+    yield state;
   }
 }
